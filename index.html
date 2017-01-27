@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html data-ng-app="infoApp">
+
+<head>
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" type="text/css" href="css/body.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="js/material.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+</head>
+
+<body>
+    <div data-ng-controller="info">
+        <form name="infoForm" data-ng-submit="submitInfoForm()">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="sample3" Required data-ng-model="form.fname">
+                <label class="mdl-textfield__label" for="sample3">First Name</label>
+            </div>
+            <br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="sample3" data-ng-model="form.lname">
+                <label class="mdl-textfield__label" for="sample3">Last Name</label>
+            </div>
+            <br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="email" id="sample3" Required data-ng-model="form.email">
+                <label class="mdl-textfield__label" for="sample3">Email</label>
+            </div>
+            <br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="sample3" data-ng-model="form.occupation">
+                <label class="mdl-textfield__label" for="sample3">Occupation</label>
+            </div>
+            <br>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="Submit">Submit</button>
+        </form>
+        <div>
+            <div>
+                {{form.fname}} - {{form.lname}} - {{form.email}} - {{form.occupation}}
+            </div>
+</body>
+
+</html>
