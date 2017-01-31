@@ -6,17 +6,15 @@ infoApp.controller("info", function($scope) {
         //parse connection initialization
         Parse.initialize("Sxv6GhzEjNWqVPmQDxsbYTYIPvuRD8keZEOJmD1E", "vtlFvMd43MLSUJVgs2Y4VlRGaWEY8PJy8nyjWFXI");
         //sending push notifications to the global channel
-        Parse.Push.send({
-            channels: ["Global"],
-            data: {
-                alert: "Test Push Notification"
-            }
+        Parse.Cloud.run('sendPush', {
+            title: "Test Alert",
+            alert: "Test Alert Body"
         }, {
-            success: function() {
-                alert("Done");
+            success: function(result) {
+                alert(result);
             },
             error: function(error) {
-                alert("Not Send");
+                alert("Fail");
             }
         });
     }
