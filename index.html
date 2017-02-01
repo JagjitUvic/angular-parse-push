@@ -8,11 +8,12 @@
     <script src="js/material.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parse/1.2.13/parse.js"></script>
+    <script src="https://npmcdn.com/parse@1.9.2/dist/parse.min.js"></script>
 </head>
 
-<body>
-    <div data-ng-controller="info">
+<body data-ng-controller="info">
+    <div>
+        <h2>Create New Object Form</h2>
         <form name="infoForm" data-ng-submit="submitInfoForm()">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="sample3" Required data-ng-model="form.fname">
@@ -37,10 +38,24 @@
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="Submit">Submit</button>
         </form>
         <div>
-            <div>
-                <!- Print values from the form using angular bindings->
-                {{form.fname}} - {{form.lname}} - {{form.email}} - {{form.occupation}}
-            </div>
+            <!- Print values from the form using angular bindings->
+            {{form.fname}} - {{form.lname}} - {{form.email}} - {{form.occupation}}
+        </div>
+        <h2>User Object ID Saved{{userID}}</h2>
+        <br />
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="getUserDetails()" type="submit" value="Submit">Get User Object</button>
+        <h2>Populated user Details</h2>
+        <form name="infoForm" data-ng-submit="deleteUserForm()">
+            <input class="mdl-textfield__input" type="text" ng-model="dFname">
+            <br>
+            <input class="mdl-textfield__input" type="text" ng-model="dLnames">
+            <br>
+            <input class="mdl-textfield__input" type="text" ng-model="dEmail">
+            <br>
+            <input class="mdl-textfield__input" type="text" ng-model="dWork">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="Submit">Delete</button>
+        </form>
+    </div>
 </body>
 
 </html>
